@@ -52,6 +52,14 @@ def start(message):
 	else:
 		bot.send_message(message.chat.id, 'Внеси собственное расписание (/new) или посмотри уже созданные (/connect). Помощь - /help')
 
+@bot.message_handler(commands=['about'])
+def about(message):
+	bot.send_message(message.chat.id, constants.about)
+
+@bot.message_handler(commands=['help'])
+def about(message):
+	bot.send_message(message.chat.id, constants.help)		
+		
 @bot.message_handler(commands=['stop'])
 def stop(message):
 	try:
